@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEO 5 Geotechnical Software | GSD IDEA</title>
+    <style>
+        /* CSS Variables for Brand Colors */
+        :root {
+            --primary-blue: #185ba5;
+            --primary-blue-hover: #124680;
+            --primary-orange: #e85d22;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header / Top Navigation */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 5%;
+            display: flex;
+            justify-content: flex-start;
+            z-index: 10;
+        }
+
+        .brand-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 5% 60px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--bg-light) 100%);
+        }
+
+        .hero-logo {
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-logo img {
+            height: 120px;
+            width: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        /* Call to Action Buttons */
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+            min-width: 280px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: 2px solid var(--primary-blue);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-blue-hover);
+            border-color: var(--primary-blue-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 5%;
+            background-color: var(--white);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 48px;
+            color: var(--text-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .cta-container { flex-direction: column; width: 100%; max-width: 400px; margin: 0 auto; }
+            .btn { width: 100%; min-width: auto; }
+            .header { padding: 16px; }
+            .brand-logo img { height: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">
+            <img src="gsd-logo.png" alt="GSD IDEA Logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-logo">
+            <img src="geo5-logo.png" alt="GEO 5 Logo">
+        </div>
+        
+        <h1 class="main-title">GEO 5 Suite</h1>
+        <p class="hero-subtitle">
+            The ultimate software solution for geotechnical engineering. Designed to solve a wide range of analytical and finite element (FEM) tasks efficiently and accurately.
+        </p>
+
+        <div class="cta-container">
+            <a href="https://gsdidea.ae/your-geo5-geotechnical-suite-gulf-reseller/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Explore GSD IDEA GEO 5
+            </a>
+            <a href="https://deepfoundationsmena.com/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                Sign Up to the GEO 5 Event
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why Choose GEO 5?</h2>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <h3 class="feature-title">Modular Architecture</h3>
+                <p class="feature-text">Over 30 specialized programs for slope stability, excavation design, retaining walls, and foundation analysis that seamlessly transfer data.</p>
+            </div>
+
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 class="feature-title">Global Standards</h3>
+                <p class="feature-text">Fully compliant with international engineering practices, supporting Eurocode 7 (EN 1997-1), LRFD (AASHTO), and numerous national annexes.</p>
+            </div>
+
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                <h3 class="feature-title">BIM Integration</h3>
+                <p class="feature-text">Built for modern workflows. Effortlessly export data to common BIM formats (like IFC and LandXML) to share with third-party architectural software.</p>
+            </div>
+
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <h3 class="feature-title">Comprehensive Reports</h3>
+                <p class="feature-text">Generate clear, customizable structural analysis reports with editable graphical outputs that automatically update when input data changes.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
